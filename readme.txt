@@ -10,3 +10,12 @@ Design of code
     contains the word or not.
     - If the function toLowerCase returns true, then we know the string is found in the line, we will output the line.
     - After we determine all of the lines that contain our target word, we then pass them back over to the client side for output.
+Problems encountered
+    - Passing char * back and forth was brutal, especially figuring out how to get certain lines into another array to pass to the client or server side. 
+        - Figured this out by using strcpy and .c_str() functions to get the strings over to character arrays.
+    - Figuring out how to pass command line args to server and client side, struggled with this one for a bit even thought it's very simple.
+        - This was solved by realizing that I didnt have to pass & to ./server in order for it to compile correctly.
+IPC methods
+    - bind is necessary when creating a new socket because it basically links the socket to memory, as well as memset.
+    - Accept is accepting a connection and this is key when communicating between a server side and client side.
+    - write and read are essential for passing information back and forth between the two sides.
